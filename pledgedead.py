@@ -2,22 +2,34 @@
 
 # Dont rent, buy, squat, couchsurf, nothing is safe anymore. Stay at your rents if you can.
 
+# How much do you have left after paying the minimum that you are willin to put towards the mortgage, or invest?
 monthly_extra_cash = 2500
-expected_investment_value = 1.1 #10% yearly
+
+# How much do you expect every month on an external investment? 10% in this case.
+expected_investment_value = 1.1
+
+# How many years is the mortgage?
 global years
 years = 30
+
+# How much is the current valuation of the house?
 value = 159000
+# Down payment, in this case 20%
 down_payment = (value*.2)
+
+# Figure out the loan.
 global loan
 loan = (value-down_payment)
+
 rate = .05750
 monthly = 742.30
 actual_monthly =  1097.63
-# Dont talk shit about Total https://www.youtube.com/watch?v=C-M8mfBAaBs
+
+# Dont talk shit about Total https://www.youtube.com/watch?v=C-M8mfBAaBs -- that was me writing this.
 global total
 total = (monthly*360)
 
-# Check inflation. Hard coded very conservatively for now (early 2022). This feature needs to be included.
+# Check inflation. Hard coded very conservatively for now (early 2022). This feature needs to be included. TODO
 #inflation = 20
 
 # Loop through all years to determine when to stop paying the insane rates and start investing instead. 7+ probably, at that point just buy shares in gamestop.
