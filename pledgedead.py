@@ -4,16 +4,16 @@
 # Set your variables:
 
 # How many years is the mortgage?
-years = 10
+years = 30
 
 # How much is the current valuation of the house?
-value = 100000
+value = 300000
 
 # What % are you putting forth as a down payment? In this case, it is set to .2, or 20%
 down_payment = (value*.2)
 
 # How much do you have left after paying the minimum that you are willing to put towards the investment?
-monthly_extra_cash = 1000
+monthly_extra_cash = 2000
 
 # How much do you expect every month on an external investment? 7% in this case.
 expected_annual_investment_percent = 7
