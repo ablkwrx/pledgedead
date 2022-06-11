@@ -2,14 +2,25 @@
 
 # Stay at your rents as long as you can and invest all your money and retire at 30.
 # Set your variables:
+
 # How many years is the mortgage?
 years = 10
+
 # How much is the current valuation of the house?
 value = 100000
-# Down payment, in this case 20%
+
+# What % are you putting forth as a down payment? In this case, it is set to .2, or 20%
 down_payment = (value*.2)
-# How much do you have left after paying the minimum that you are willin to put towards the mortgage, or invest?
+
+# How much do you have left after paying the minimum that you are willing to put towards the investment?
 monthly_extra_cash = 1000
+
+# How much do you expect every month on an external investment? 7% in this case.
+expected_annual_investment_percent = 7
+
+# The % APR. Disregard points here. This is the raw APR %. In this case, we are getting a 5.75% APR.
+rate = .05750
+
 
 # End User Variables.
 
@@ -23,9 +34,6 @@ yearly_extra_cash = (monthly_extra_cash*12)
 # The grand total extra cash you have to invest for the longevity of the mortgage total. So for a 10 year loan, $1 every month is $12 a month, times 10 for $120 total.
 mortgage_extra_cash = (yearly_extra_cash*years)
 
-# How much do you expect every month on an external investment? 10% in this case.
-expected_annual_investment_percent = 5
-
 # Turning this into a decimal to multiply as a percentage.
 expected_annual_investment_decimal = (expected_annual_investment_percent/100)
 
@@ -33,16 +41,11 @@ expected_annual_investment_decimal = (expected_annual_investment_percent/100)
 global loan
 loan = (value-down_payment)
 
-# The % APR. Disregard points here. This is the raw APR %.
-rate = .05750
+# Yearly payments for the house. Here, we are paying the minimum for it and putting what we have left towards the investment.
+yearly_payment=(loan/years)
 
-# Monthly payments for house.
-monthly = 1000
-
-# Dont talk shit about Total https://www.youtube.com/watch?v=C-M8mfBAaBs
-# The total amount of money you are paying towards the principle per month.
-global total
-total = (monthly*360)
+# Monthly payments for house. Here, we are paying the minimum for it and putting what we have left towards the investment.
+monthly = (yearly_payment/12)
 
 # TODO: Inflation?
 
