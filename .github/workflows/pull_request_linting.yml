@@ -1,22 +1,9 @@
-name: Pull Request Lint
-
-on:
-  pull_request:
-    types: ['opened', 'edited', 'reopened', 'synchronize']
-
+name: PR Lint
+on: [pull_request]
 jobs:
-  title:
-    name: ticket check
+  pr_lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check for ticket
-        uses: neofinancial/ticket-check-action@v1
-        with:
-          token: ${{ secrets.PULL_REQUEST_LINT }}
-          ticketLink: 'https://:circlek.atlassian.net/browse/pledgedead-%ticketNumber%'
-          ticketPrefix: 'pledgedead-'
-          titleRegex: '^pledgedead-(?<ticketNumber>\d+)'
-          branchRegex: '[A-Za-z]+\/pledgedead-(?<ticketNumber>\d+)\/.*'
-          bodyRegex: 'pledgedead-(?<ticketNumber>\d+)'
-          bodyURLRegex: 'http(s?):\/\/(:circlek.atlassian.net)(\/browse)\/(pledgedead\-)(?<ticketNumber>\d+)'
+    - uses: vijaykramesh/pr-lint-action@v1.0
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
