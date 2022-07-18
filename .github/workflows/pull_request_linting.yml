@@ -15,7 +15,7 @@ jobs:
         with:
           token: ${{ secrets.PULL_REQUEST_LINT }}
           ticketLink: 'https://:circlek.atlassian.net/browse/pledgedead-%ticketNumber%'
-          ticketPrefix: 'pledgedead-'
+          ticketPrefix: 'pledgedead'
           titleRegex: '^pledgedead-(?<ticketNumber>\d+)'
           branchRegex: 'pledgedead-(?<ticketNumber>\d+)'
           bodyRegex: 'pledgedead-(?<ticketNumber>\d+)'
